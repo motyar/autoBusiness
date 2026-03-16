@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Gemini CLI
+        run: npm install -g @google/gemini-cli
+
       - name: Restore database cache
         uses: actions/cache@v4
         with:
@@ -35,11 +38,15 @@ jobs:
       - name: Run Keyword Research
         if: ${{ vars.KEYWORD_RESEARCH_ENABLED != 'false' }}
         run: node scripts/keyword-research.js
+        env:
+          GEMINI_MODEL: gemini-3.1-flash-lite-preview
         continue-on-error: true
 
       - name: Run Trend Checker
         if: ${{ vars.TREND_CHECKER_ENABLED != 'false' }}
         run: node scripts/trend-checker.js
+        env:
+          GEMINI_MODEL: gemini-3.1-flash-lite-preview
         continue-on-error: true
 
       - name: Run Convergence Scorer

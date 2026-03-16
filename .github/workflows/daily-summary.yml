@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Gemini CLI
+        run: npm install -g @google/gemini-cli
+
       - name: Restore database cache
         uses: actions/cache@v4
         with:
@@ -34,6 +37,8 @@ jobs:
 
       - name: Generate Summary
         run: node scripts/summary.js
+        env:
+          GEMINI_MODEL: gemini-3.1-flash-lite-preview
 
       - name: Commit summary
         run: |
