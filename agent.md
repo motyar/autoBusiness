@@ -50,9 +50,8 @@ See `skills/` folder for detailed how-to on each capability:
 - `skills/landing-page-builder.md` — generate and deploy landing pages
 
 ## Model Routing
-- Gemini 1.5 Flash → all classification and scoring tasks (cheap, fast)
-- Gemini 1.5 Pro → content generation (emails, landing page copy, blog posts)
-- Never use a more expensive model when a cheaper one can do the job
+- `gemini-3.1-flash-lite-preview` → all tasks: classification, scoring, and content generation
+- Never exceed `config.ai.max_daily_cost_usd` per day regardless of model
 
 ## Cost Rules
 - Hard cap: `config.ai.max_daily_cost_usd` per day

@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install Gemini CLI
+        run: npm install -g @google/gemini-cli
+
       - name: Restore database cache
         uses: actions/cache@v4
         with:
@@ -37,6 +40,7 @@ jobs:
         run: node scripts/email-finder.js
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.1-flash-lite-preview
           HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
           APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
         continue-on-error: true
@@ -46,6 +50,7 @@ jobs:
         run: node scripts/emailer.js
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.1-flash-lite-preview
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           LANDING_PAGE_URL: ${{ vars.LANDING_PAGE_URL }}
         continue-on-error: true

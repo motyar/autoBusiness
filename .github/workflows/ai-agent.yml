@@ -1,0 +1,147 @@
+name: AI Agent (Gemini CLI)
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Task pipeline to run'
+        required: true
+        type: choice
+        default: daily-scrape
+        options:
+          - daily-scrape
+          - weekly-keywords
+          - send-emails
+          - landing-page
+          - full-pipeline
+      niche:
+        description: 'Target niche (optional, used for landing-page task)'
+        required: false
+        type: string
+      instructions:
+        description: 'Extra instructions for the agent (optional)'
+        required: false
+        type: string
+
+jobs:
+  run-ai-agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Gemini CLI
+        run: npm install -g @google/gemini-cli
+
+      - name: Restore database cache
+        uses: actions/cache@v4
+        with:
+          path: data/database.db
+          key: database-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            database-${{ github.ref_name }}-
+
+      - name: Run AI Agent via Gemini CLI
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.1-flash-lite-preview
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          LANDING_PAGE_URL: ${{ vars.LANDING_PAGE_URL }}
+          FORMSPREE_FORM_ID: ${{ secrets.FORMSPREE_FORM_ID }}
+          LANDING_PAGE_NICHE: ${{ github.event.inputs.niche }}
+        run: |
+          TASK="${{ github.event.inputs.task || 'daily-scrape' }}"
+          EXTRA="${{ github.event.inputs.instructions }}"
+
+          case "$TASK" in
+            daily-scrape)
+              TASK_INSTRUCTIONS="Run the daily scrape and score pipeline by executing these commands in sequence (continue even if one fails):
+          1. node scripts/reddit-scraper.js
+          2. node scripts/hn-scraper.js
+          3. node scripts/idea-scorer.js
+          4. node scripts/convergence-scorer.js
+          5. node scripts/summary.js"
+              ;;
+            weekly-keywords)
+              TASK_INSTRUCTIONS="Run the weekly keyword research pipeline by executing these commands in sequence (continue even if one fails):
+          1. node scripts/keyword-research.js
+          2. node scripts/trend-checker.js
+          3. node scripts/convergence-scorer.js
+          4. node scripts/summary.js"
+              ;;
+            send-emails)
+              TASK_INSTRUCTIONS="Run the email outreach pipeline by executing these commands in sequence (continue even if one fails):
+          1. node scripts/email-finder.js
+          2. node scripts/emailer.js
+          3. node scripts/summary.js"
+              ;;
+            landing-page)
+              TASK_INSTRUCTIONS="Generate landing pages by executing: LANDING_PAGE_NICHE='${LANDING_PAGE_NICHE}' node scripts/landing-page.js, then node scripts/summary.js"
+              ;;
+            full-pipeline)
+              TASK_INSTRUCTIONS="Run the complete pipeline by executing all commands in sequence (continue even if one fails):
+          1. node scripts/reddit-scraper.js
+          2. node scripts/hn-scraper.js
+          3. node scripts/keyword-research.js
+          4. node scripts/trend-checker.js
+          5. node scripts/idea-scorer.js
+          6. node scripts/convergence-scorer.js
+          7. node scripts/landing-page.js
+          8. node scripts/summary.js"
+              ;;
+            *)
+              TASK_INSTRUCTIONS="Run the daily scrape and score pipeline (default):
+          1. node scripts/reddit-scraper.js
+          2. node scripts/hn-scraper.js
+          3. node scripts/idea-scorer.js
+          4. node scripts/convergence-scorer.js
+          5. node scripts/summary.js"
+              ;;
+          esac
+
+          AGENT_SYSTEM="$(cat agent.md)"
+
+          PROMPT="${AGENT_SYSTEM}
+
+          ## Current Task
+          ${TASK_INSTRUCTIONS}
+
+          For each command: run it using the shell, capture its output, and continue to the next even if it exits with an error. After all commands have run, print a brief summary listing which commands succeeded and which failed along with any key output lines."
+
+          if [ -n "$EXTRA" ]; then
+            PROMPT="${PROMPT}
+
+          ## Additional Instructions
+          ${EXTRA}"
+          fi
+
+          echo "$PROMPT" | gemini --yolo
+        continue-on-error: true
+
+      - name: Commit outputs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/ landing-pages/ || true
+          git diff --staged --quiet || git commit -m "chore: ai-agent run - ${{ github.event.inputs.task || 'daily-scrape' }} [skip ci]"
+          git push || true

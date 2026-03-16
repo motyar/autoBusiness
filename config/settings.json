@@ -72,8 +72,8 @@
     "results_per_query": 20
   },
   "ai": {
-    "default_model": "gemini-1.5-flash",
-    "complex_model": "gemini-1.5-pro",
+    "default_model": "gemini-3.1-flash-lite-preview",
+    "complex_model": "gemini-3.1-flash-lite-preview",
     "batch_size": 20,
     "max_daily_cost_usd": 5,
     "confidence_threshold": 60
