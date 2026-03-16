@@ -2,9 +2,9 @@
   "modules": {
     "reddit_scraper": true,
     "keyword_research": true,
-    "trend_checker": false,
+    "trend_checker": true,
     "hn_scraper": true,
-    "idea_scorer": false,
+    "idea_scorer": true,
     "convergence_scorer": true,
     "email_finder": false,
     "email_sender": false,
@@ -115,7 +115,7 @@
     "trial_days": 7
   },
   "niche": {
-    "target": "",
-    "keywords": []
+    "target": "podcast generators",
+    "keywords": ["tts", "ai podcast", "ai audio"]
   }
 }
