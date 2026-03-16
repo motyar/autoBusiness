@@ -63,7 +63,7 @@ function run() {
   }
 
   const shortlist = [];
-  const minSources = 2;
+  const minSources = 3;
 
   for (const [niche, data] of nicheMap.entries()) {
     if (data.sources.length < minSources) continue;

@@ -14,18 +14,24 @@ Confirm demand direction — only target niches with rising (not flat or declini
 - Updates `ideas` table: promotes ideas with `direction = 'rising'`
 
 ## Data Source
-Google Trends via `pytrends` Python library (free, unofficial):
+Google Trends via direct HTTP request (no API key, no Python dependency). The
+`scripts/trend-checker.js` implementation fetches the multiline widget data endpoint:
+
+```
+GET https://trends.google.com/trends/api/widgetdata/multiline?hl=en-US&tz=-330&req=...
+```
+
+The response is prefixed with a JS safety string (`)]}'`); the implementation strips
+it and parses the JSON. This is the same approach used by unofficial clients like
+`pytrends` (Python) under the hood.
+
+**Optional Python alternative** (if running inside a Python-capable environment):
 ```python
 pip install pytrends
 from pytrends.request import TrendReq
 pytrends = TrendReq(hl='en-US', tz=360)
 pytrends.build_payload([keyword], cat=0, timeframe='today 12-m', geo='')
 df = pytrends.interest_over_time()
-```
-
-### Alternative: Direct HTTP (no Python dependency)
-```
-GET https://trends.google.com/trends/api/explore?hl=en-US&tz=-330&req={"comparisonItem":[{"keyword":"{KEYWORD}","geo":"","time":"today 12-m"}]}
 ```
 
 ## Direction Classification
