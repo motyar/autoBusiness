@@ -1,0 +1,89 @@
+# Research Run — 2026-03-16 17:17 UTC
+
+## Summary
+
+| Metric | Count |
+|--------|-------|
+| Keywords generated this run | 457 |
+| Keywords stored (score ≥ 3) | 457 |
+| Total keywords in database | 457 |
+| HN posts collected | 85 |
+| Reddit posts collected | 0 |
+
+## Top Keywords (score ≥ 3)
+
+| Keyword | Score | Volume | Competition | Niche |
+|---------|-------|--------|-------------|-------|
+| alternative to | 4 | 1000-5000 | low | alternative to |
+| ai audio | 3 | 1000-5000 | medium | podcast generators |
+| ai audiobook | 3 | 1000-5000 | medium | podcast generators |
+| ai podcast | 3 | 1000-5000 | medium | podcast generators |
+| ai-audio-zu-text-transcription tool | 3 | 1000-5000 | medium | podcast generators |
+| alternative to a cup | 3 | 100-1000 | low | cup |
+| alternative to a cup crossword clue | 3 | 100-1000 | low | cup crossword clue |
+| alternative to a cup nyt | 3 | 100-1000 | low | cup nyt |
+| alternative to adobe acrobat | 3 | 100-1000 | low | adobe acrobat |
+| alternative to airbnb | 3 | 100-1000 | low | airbnb |
+| alternative to alcohol | 3 | 100-1000 | low | alcohol |
+| alternative to amazon | 3 | 100-1000 | low | amazon |
+| alternative to amazon shopping | 3 | 100-1000 | low | amazon shopping |
+| alternative to amoxicillin | 3 | 100-1000 | low | amoxicillin |
+| alternative to an email crossword clue | 3 | 100-1000 | low | email crossword clue |
+| alternative to audible | 3 | 100-1000 | low | audible |
+| alternative to baking powder | 3 | 100-1000 | low | baking powder |
+| alternative to baking soda | 3 | 100-1000 | low | baking soda |
+| alternative to benadryl | 3 | 100-1000 | low | benadryl |
+| alternative to bifold closet doors | 3 | 100-1000 | low | bifold closet doors |
+| alternative to botox | 3 | 100-1000 | low | botox |
+| alternative to bread crumbs | 3 | 100-1000 | low | bread crumbs |
+| alternative to brown sugar | 3 | 100-1000 | low | brown sugar |
+| alternative to bulgarian split squat | 3 | 100-1000 | low | bulgarian split squat |
+| alternative to butter | 3 | 100-1000 | low | butter |
+| alternative to buttermilk | 3 | 100-1000 | low | buttermilk |
+| alternative to cable tv | 3 | 100-1000 | low | cable tv |
+| alternative to chatgpt | 3 | 100-1000 | low | chatgpt |
+| alternative to chicken broth | 3 | 100-1000 | low | chicken broth |
+| alternative to clearasil crossword | 3 | 100-1000 | low | clearasil crossword |
+
+## Top HN Posts
+
+| Title | Points | Comments |
+|-------|--------|----------|
+| [Show HN: Gemini Pro 3 imagines the HN front page 10 years from now](https://dosaygo-studio.github.io/hn-front-page-2035/news) | 3346 | 965 |
+| [Show HN: Jmail – Google Suite for Epstein files](https://www.jmail.world) | 1557 | 363 |
+| [Show HN: I'm an airline pilot – I built interactive graphs/globes of my flights](https://jameshard.ing/pilot) | 1539 | 197 |
+| [Show HN: isometric.nyc – giant isometric pixel art map of NYC](https://cannoneyed.com/isometric-nyc/) | 1325 | 241 |
+| [Show HN: I built a synth for my daughter](https://bitsnpieces.dev/posts/a-synth-for-my-daughter/) | 1278 | 209 |
+| [Show HN: A store that generates products from anything you type in search](https://anycrap.shop/) | 1184 | 333 |
+| [Show HN: I spent 6 years building a ridiculous wooden pixel display](https://benholmen.com/blog/kilopixel/) | 1145 | 144 |
+| [Show HN: Clippy – 90s UI for local LLMs](https://felixrieseberg.github.io/clippy/) | 1122 | 275 |
+| [Show HN: Term.everything – Run any GUI app in the terminal](https://github.com/mmulet/term.everything) | 1094 | 144 |
+| [Show HN: I recreated Windows XP as my portfolio](https://mitchivin.com/) | 1032 | 323 |
+
+## Run Log
+
+| Script | Status | Items | Summary |
+|--------|--------|-------|---------|
+| convergence-scorer | ✅ success | 1 | 1 niches scored. 0 validated (2+ sources, score ≥ 60). Top: podcast generators |
+| summary | ✅ success | 1 | Summary generated. |
+| trend-checker | ✅ success | 0 | Checked trends for 0 keywords. |
+| keyword-research | ✅ success | 183 | Expanded 17 seeds → 2507 keywords → 183 stored (score >= 3). |
+| hn-scraper | ✅ success | 9 | Scraped 10 HN queries. Inserted 9 new posts. |
+| reddit-scraper | ✅ success | 0 | Scraped 8 subreddits × 16 queries. Inserted 0 new posts. |
+| summary | ✅ success | 1 | Summary generated. |
+| keyword-research | ✅ success | 3 | Expanded 7 seeds → 1745 keywords → 3 stored (score >= 3). |
+| hn-scraper | ✅ success | 0 | Scraped 5 HN queries. Inserted 0 new posts. |
+| reddit-scraper | ✅ success | 0 | Scraped 8 subreddits × 8 queries. Inserted 0 new posts. |
+| summary | ✅ success | 1 | Summary generated. |
+| keyword-research | ✅ success | 9 | Expanded 7 seeds → 1745 keywords → 9 stored (score >= 3). |
+| hn-scraper | ✅ success | 0 | Scraped 5 HN queries. Inserted 0 new posts. |
+| reddit-scraper | ✅ success | 0 | Scraped 8 subreddits × 8 queries. Inserted 0 new posts. |
+| summary | ✅ success | 1 | Summary generated. |
+| convergence-scorer | ✅ success | 0 | 0 niches scored. 0 validated (3+ sources, score ≥ 60). Top: none |
+| trend-checker | ✅ success | 0 | Checked trends for 0 keywords. |
+| keyword-research | ✅ success | 262 | Expanded 7 seeds → 1745 keywords → 262 stored (score >= 3). |
+| hn-scraper | ✅ success | 76 | Scraped 5 HN queries. Inserted 76 new posts. |
+| reddit-scraper | ✅ success | 0 | Scraped 8 subreddits × 8 queries. Inserted 0 new posts. |
+
+---
+_Generated by autoBusiness research pipeline_
