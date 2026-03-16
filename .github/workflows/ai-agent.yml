@@ -138,10 +138,14 @@ jobs:
           echo "$PROMPT" | gemini --yolo
         continue-on-error: true
 
+      - name: Export research results
+        run: node scripts/export-research.js
+        continue-on-error: true
+
       - name: Commit outputs
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Actions"
-          git add data/ landing-pages/ || true
+          git add output/ landing-pages/
           git diff --staged --quiet || git commit -m "chore: ai-agent run - ${{ github.event.inputs.task || 'daily-scrape' }} [skip ci]"
-          git push || true
+          git push origin HEAD
