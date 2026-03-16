@@ -1,0 +1,610 @@
+[
+  {
+    "title": "Show HN: Gemini Pro 3 imagines the HN front page 10 years from now",
+    "url": "https://dosaygo-studio.github.io/hn-front-page-2035/news",
+    "points": 3346,
+    "num_comments": 965,
+    "author": "keepamovin",
+    "published_at": "2025-12-09 15:00:38"
+  },
+  {
+    "title": "Show HN: Jmail – Google Suite for Epstein files",
+    "url": "https://www.jmail.world",
+    "points": 1557,
+    "num_comments": 363,
+    "author": "lukeigel",
+    "published_at": "2025-12-20 21:00:05"
+  },
+  {
+    "title": "Show HN: I'm an airline pilot – I built interactive graphs/globes of my flights",
+    "url": "https://jameshard.ing/pilot",
+    "points": 1539,
+    "num_comments": 197,
+    "author": "jamesharding",
+    "published_at": "2025-06-27 13:06:54"
+  },
+  {
+    "title": "Show HN: isometric.nyc – giant isometric pixel art map of NYC",
+    "url": "https://cannoneyed.com/isometric-nyc/",
+    "points": 1325,
+    "num_comments": 241,
+    "author": "cannoneyed",
+    "published_at": "2026-01-22 16:52:35"
+  },
+  {
+    "title": "Show HN: I built a synth for my daughter",
+    "url": "https://bitsnpieces.dev/posts/a-synth-for-my-daughter/",
+    "points": 1278,
+    "num_comments": 209,
+    "author": "random_moonwalk",
+    "published_at": "2025-11-12 14:12:13"
+  },
+  {
+    "title": "Show HN: A store that generates products from anything you type in search",
+    "url": "https://anycrap.shop/",
+    "points": 1184,
+    "num_comments": 333,
+    "author": "kafked",
+    "published_at": "2025-09-13 12:02:11"
+  },
+  {
+    "title": "Show HN: I spent 6 years building a ridiculous wooden pixel display",
+    "url": "https://benholmen.com/blog/kilopixel/",
+    "points": 1145,
+    "num_comments": 144,
+    "author": "benholmen",
+    "published_at": "2025-08-04 16:16:21"
+  },
+  {
+    "title": "Show HN: Clippy – 90s UI for local LLMs",
+    "url": "https://felixrieseberg.github.io/clippy/",
+    "points": 1122,
+    "num_comments": 275,
+    "author": "felixrieseberg",
+    "published_at": "2025-05-06 15:02:22"
+  },
+  {
+    "title": "Show HN: Term.everything – Run any GUI app in the terminal",
+    "url": "https://github.com/mmulet/term.everything",
+    "points": 1094,
+    "num_comments": 144,
+    "author": "mmulet",
+    "published_at": "2025-09-09 13:16:30"
+  },
+  {
+    "title": "Show HN: I recreated Windows XP as my portfolio",
+    "url": "https://mitchivin.com/",
+    "points": 1032,
+    "num_comments": 323,
+    "author": "mitchivin",
+    "published_at": "2025-09-07 01:44:19"
+  },
+  {
+    "title": "Show HN: Tinder but it's only pictures of my wife and I can only swipe right",
+    "url": "https://trytender.app/",
+    "points": 1030,
+    "num_comments": 263,
+    "author": "risquer",
+    "published_at": "2025-07-23 22:53:27"
+  },
+  {
+    "title": "Show HN: Kitten TTS – 25MB CPU-Only, Open-Source TTS Model",
+    "url": "https://github.com/KittenML/KittenTTS",
+    "points": 1003,
+    "num_comments": 361,
+    "author": "divamgupta",
+    "published_at": "2025-08-06 05:04:36"
+  },
+  {
+    "title": "Show HN: I built a hardware processor that runs Python",
+    "url": "https://www.runpyxl.com/gpio",
+    "points": 983,
+    "num_comments": 265,
+    "author": "hwpythonner",
+    "published_at": "2025-04-28 11:44:54"
+  },
+  {
+    "title": "Show HN: Ten years of running every day, visualized",
+    "url": "https://nodaysoff.run",
+    "points": 958,
+    "num_comments": 495,
+    "author": "friggeri",
+    "published_at": "2025-07-10 16:21:13"
+  },
+  {
+    "title": "Show HN: Draw a fish and watch it swim with the others",
+    "url": "https://drawafish.com",
+    "points": 935,
+    "num_comments": 234,
+    "author": "hallak",
+    "published_at": "2025-07-29 04:57:22"
+  },
+  {
+    "title": "Show HN: Unsure Calculator – back-of-a-napkin probabilistic calculator",
+    "url": "https://filiph.github.io/unsure/",
+    "points": 930,
+    "num_comments": 162,
+    "author": "filiph",
+    "published_at": "2025-04-15 08:22:59"
+  },
+  {
+    "title": "Show HN: I built an AI that turns GitHub codebases into easy tutorials",
+    "url": "https://github.com/The-Pocket/Tutorial-Codebase-Knowledge",
+    "points": 923,
+    "num_comments": 172,
+    "author": "zh2408",
+    "published_at": "2025-04-19 21:04:41"
+  },
+  {
+    "title": "Show HN: I was curious about spherical helix, ended up making this visualization",
+    "url": "https://visualrambling.space/moving-objects-in-3d/",
+    "points": 865,
+    "num_comments": 132,
+    "author": "damarberlari",
+    "published_at": "2025-08-20 14:02:47"
+  },
+  {
+    "title": "Show HN: Use Their ID – Use your local UK MP’s ID for the Online Safety Act",
+    "url": "https://use-their-id.com/",
+    "points": 862,
+    "num_comments": 281,
+    "author": "timje1",
+    "published_at": "2025-07-28 21:49:10"
+  },
+  {
+    "title": "Show HN: Workout.cool – Open-source fitness coaching platform",
+    "url": "https://github.com/Snouzy/workout-cool",
+    "points": 827,
+    "num_comments": 233,
+    "author": "surgomat",
+    "published_at": "2025-06-18 12:33:49"
+  },
+  {
+    "title": "Ask HN: My family business runs on a 1993-era text-based-UI (TUI). Anybody else?",
+    "url": "",
+    "points": 320,
+    "num_comments": 309,
+    "author": "urnicus",
+    "published_at": "2025-11-05 14:29:49"
+  },
+  {
+    "title": "Ask HN: Startup getting spammed with PayPal disputes, what should we do?",
+    "url": "",
+    "points": 291,
+    "num_comments": 185,
+    "author": "june3739",
+    "published_at": "2025-06-04 01:46:49"
+  },
+  {
+    "title": "Ask HN: What toolchains are people using for desktop app development in 2025?",
+    "url": "",
+    "points": 113,
+    "num_comments": 132,
+    "author": "lincoln20xx",
+    "published_at": "2025-08-09 16:52:02"
+  },
+  {
+    "title": "Ask HN: Has AI stolen the satisfaction from programming?",
+    "url": "",
+    "points": 99,
+    "num_comments": 113,
+    "author": "marxism",
+    "published_at": "2025-10-13 19:07:15"
+  },
+  {
+    "title": "Ask HN: What alternatives to GitHub are you using?",
+    "url": "",
+    "points": 91,
+    "num_comments": 97,
+    "author": "yakattak",
+    "published_at": "2025-08-12 13:59:34"
+  },
+  {
+    "title": "Ask HN: What's the Point Anymore?",
+    "url": "",
+    "points": 68,
+    "num_comments": 82,
+    "author": "fnoef",
+    "published_at": "2026-01-27 13:14:52"
+  },
+  {
+    "title": "Ask HN: Anyone else feel this community has changed recently?",
+    "url": "",
+    "points": 62,
+    "num_comments": 35,
+    "author": "kypro",
+    "published_at": "2026-03-06 23:44:28"
+  },
+  {
+    "title": "Ask HN: AI Replacing Engineers – Firsthand Stories?",
+    "url": "",
+    "points": 48,
+    "num_comments": 89,
+    "author": "ludovicianul",
+    "published_at": "2025-04-29 11:32:13"
+  },
+  {
+    "title": "Ask HN: Genuine alternatives to Google and Apple for releasing paid apps",
+    "url": "",
+    "points": 22,
+    "num_comments": 13,
+    "author": "asjdflakjsdf",
+    "published_at": "2025-06-14 00:23:09"
+  },
+  {
+    "title": "Ask HN: Alternatives to Vector DB?",
+    "url": "",
+    "points": 21,
+    "num_comments": 37,
+    "author": "tmaly",
+    "published_at": "2025-03-18 16:14:04"
+  },
+  {
+    "title": "Ask HN: Help me navigate a PIP at a remote startup in the Netherlands",
+    "url": "",
+    "points": 19,
+    "num_comments": 17,
+    "author": "msoad",
+    "published_at": "2025-07-24 12:12:49"
+  },
+  {
+    "title": "Ask HN: Any local agents to help repetitive browser tasks?",
+    "url": "",
+    "points": 18,
+    "num_comments": 11,
+    "author": "pcdoodle",
+    "published_at": "2025-09-29 18:15:06"
+  },
+  {
+    "title": "Ask HN: Where is society heading, is there a plan for a jobless future?",
+    "url": "",
+    "points": 17,
+    "num_comments": 35,
+    "author": "evo_9",
+    "published_at": "2026-01-23 16:11:36"
+  },
+  {
+    "title": "Ask HN: AI tools to help you learn faster (GitHub, books, PDFs)",
+    "url": "",
+    "points": 15,
+    "num_comments": 6,
+    "author": "ilmoi",
+    "published_at": "2025-05-02 21:12:56"
+  },
+  {
+    "title": "Ask HN: European alternative to Vercel/Cloudflare for hosting",
+    "url": "",
+    "points": 13,
+    "num_comments": 20,
+    "author": "vldszn",
+    "published_at": "2026-01-27 15:57:30"
+  },
+  {
+    "title": "Ask HN: What Tools Did You Build for Yourself?",
+    "url": "",
+    "points": 11,
+    "num_comments": 5,
+    "author": "schappim",
+    "published_at": "2025-04-22 20:10:25"
+  },
+  {
+    "title": "Show HN: I built a tool to find pain points in questions and generate SaaS ideas",
+    "url": "https://painpointfinder.com/",
+    "points": 11,
+    "num_comments": 7,
+    "author": "carlosov",
+    "published_at": "2025-04-19 08:33:28"
+  },
+  {
+    "title": "Ask HN: How do you automate your release notes?",
+    "url": "",
+    "points": 10,
+    "num_comments": 15,
+    "author": "dustfinger",
+    "published_at": "2026-01-12 16:25:11"
+  },
+  {
+    "title": "Ask HN: What tools do you pay for today that feel overpriced or frustrating?",
+    "url": "",
+    "points": 9,
+    "num_comments": 19,
+    "author": "psicombinator",
+    "published_at": "2025-11-24 03:22:48"
+  },
+  {
+    "title": "Ask HN: Alternatives to Cloudflare for DNS?",
+    "url": "",
+    "points": 9,
+    "num_comments": 8,
+    "author": "modmodmod",
+    "published_at": "2025-06-27 08:43:20"
+  },
+  {
+    "title": "Ask HN: Alternatives to GH Actions?",
+    "url": "",
+    "points": 9,
+    "num_comments": 1,
+    "author": "BhavdeepSethi",
+    "published_at": "2026-03-05 16:57:52"
+  },
+  {
+    "title": "Ask HN: What Tools Did You Use to Land Your Current Job?",
+    "url": "",
+    "points": 8,
+    "num_comments": 11,
+    "author": "schappim",
+    "published_at": "2025-04-14 20:30:13"
+  },
+  {
+    "title": "Ask HN: Tools to code using voice?",
+    "url": "",
+    "points": 8,
+    "num_comments": 7,
+    "author": "emerongi",
+    "published_at": "2026-02-12 14:35:53"
+  },
+  {
+    "title": "Show HN: I built a game where you guess which startup idea succeeded",
+    "url": "https://www.startuporflop.com/",
+    "points": 8,
+    "num_comments": 7,
+    "author": "Belsonsan",
+    "published_at": "2025-05-03 19:03:15"
+  },
+  {
+    "title": "Ask HN: Tools for Crossword Puzzle Generation?",
+    "url": "",
+    "points": 6,
+    "num_comments": 8,
+    "author": "ekorbia",
+    "published_at": "2025-09-01 20:48:38"
+  },
+  {
+    "title": "Ask HN: Accessibility tools for knowledge workers with low vision",
+    "url": "",
+    "points": 6,
+    "num_comments": 4,
+    "author": "kjellsbells",
+    "published_at": "2025-09-26 12:28:45"
+  },
+  {
+    "title": "Ask HN: What tools are you using for AI evals? Everything feels half-baked",
+    "url": "",
+    "points": 6,
+    "num_comments": 3,
+    "author": "fazlerocks",
+    "published_at": "2025-06-05 18:11:53"
+  },
+  {
+    "title": "Ask HN: Alternatives to NAT gateways for EC2 instances",
+    "url": "",
+    "points": 6,
+    "num_comments": 7,
+    "author": "nodesocket",
+    "published_at": "2025-06-05 01:38:41"
+  },
+  {
+    "title": "Ask HN: WhatsApp Alternatives?",
+    "url": "",
+    "points": 6,
+    "num_comments": 7,
+    "author": "ALLTaken",
+    "published_at": "2025-04-20 18:02:18"
+  },
+  {
+    "title": "Ask HN: What tools are you using to manage a shared enterprise prompt library?",
+    "url": "",
+    "points": 5,
+    "num_comments": 1,
+    "author": "bredren",
+    "published_at": "2025-04-25 14:13:40"
+  },
+  {
+    "title": "Ask HN: Why aren't wet labs more automated?",
+    "url": "",
+    "points": 5,
+    "num_comments": 7,
+    "author": "andrewrn",
+    "published_at": "2025-10-09 14:03:28"
+  },
+  {
+    "title": "Ask HN: What tools do you use to discover competitors?",
+    "url": "",
+    "points": 4,
+    "num_comments": 10,
+    "author": "flippyhead",
+    "published_at": "2025-05-30 14:21:12"
+  },
+  {
+    "title": "Ask HN: Tool that interviews engineers to capture project knowledge",
+    "url": "",
+    "points": 4,
+    "num_comments": 2,
+    "author": "helltone",
+    "published_at": "2025-10-03 07:00:50"
+  },
+  {
+    "title": "Ask HN: AI tools/products that can accurately answer questions from documents?",
+    "url": "",
+    "points": 4,
+    "num_comments": 1,
+    "author": "jusonchan81",
+    "published_at": "2025-03-24 03:08:23"
+  },
+  {
+    "title": "Ask HN: Reddit Alternative?",
+    "url": "",
+    "points": 4,
+    "num_comments": 9,
+    "author": "ActorNightly",
+    "published_at": "2025-04-28 09:59:36"
+  },
+  {
+    "title": "Ask HN: Alternatives or cheaper way to access GPT-5 thinking?",
+    "url": "",
+    "points": 4,
+    "num_comments": 3,
+    "author": "zephyruslives",
+    "published_at": "2025-08-30 19:00:09"
+  },
+  {
+    "title": "Ask HN: Stripe alternative for marketplace type business",
+    "url": "",
+    "points": 4,
+    "num_comments": 3,
+    "author": "zigcBenx",
+    "published_at": "2025-06-13 08:08:59"
+  },
+  {
+    "title": "Ask HN: Automated WebRTC Livestream Recording",
+    "url": "",
+    "points": 4,
+    "num_comments": 0,
+    "author": "PhilipWee",
+    "published_at": "2026-01-02 01:29:24"
+  },
+  {
+    "title": "Feeding your chatbot Drugs A crazy SaaS idea",
+    "url": "https://www.pharmaicy.store",
+    "points": 4,
+    "num_comments": 2,
+    "author": "puildupO",
+    "published_at": "2025-12-28 21:48:29"
+  },
+  {
+    "title": "Show HN: SubSparks – I built an AI to turn Reddit pain points into SaaS ideas",
+    "url": "https://www.subsparks.com",
+    "points": 4,
+    "num_comments": 0,
+    "author": "victor_bram",
+    "published_at": "2025-06-07 16:58:00"
+  },
+  {
+    "title": "Ask HN: How do you validate a product idea before building?",
+    "url": "",
+    "points": 4,
+    "num_comments": 1,
+    "author": "Husena",
+    "published_at": "2025-07-20 13:36:37"
+  },
+  {
+    "title": "Ask HN: AI Tools Now Drive 50% of Our Traffic, You?",
+    "url": "",
+    "points": 3,
+    "num_comments": 2,
+    "author": "plehoux",
+    "published_at": "2025-04-19 13:58:56"
+  },
+  {
+    "title": "Ask HN: What tools are best for ripping CDs/DVDs with deliberate read errors?",
+    "url": "",
+    "points": 3,
+    "num_comments": 1,
+    "author": "HansGreebo",
+    "published_at": "2025-10-03 15:17:05"
+  },
+  {
+    "title": "Ask HN: What tools/workflow do you use to write technical books?",
+    "url": "",
+    "points": 3,
+    "num_comments": 0,
+    "author": "JSLegendDev",
+    "published_at": "2026-01-10 22:46:51"
+  },
+  {
+    "title": "Ask HN: What tools are you spending your money on?",
+    "url": "",
+    "points": 3,
+    "num_comments": 0,
+    "author": "sprainedankles",
+    "published_at": "2025-08-21 21:55:09"
+  },
+  {
+    "title": "Ask HN: Professional Alternative to Namecheap",
+    "url": "",
+    "points": 3,
+    "num_comments": 16,
+    "author": "raasdnil",
+    "published_at": "2025-10-03 03:40:56"
+  },
+  {
+    "title": "Ask HN: What alternatives to Docker Desktop are people using?",
+    "url": "",
+    "points": 3,
+    "num_comments": 9,
+    "author": "prdonahue",
+    "published_at": "2025-12-01 23:42:09"
+  },
+  {
+    "title": "Ask HN: Alternatives to Clay for Enrichment?",
+    "url": "",
+    "points": 3,
+    "num_comments": 5,
+    "author": "Poomba",
+    "published_at": "2025-11-02 16:48:58"
+  },
+  {
+    "title": "Ask HN: Gitbook Alternatives for API Documentation?",
+    "url": "",
+    "points": 3,
+    "num_comments": 2,
+    "author": "nikkilopez",
+    "published_at": "2025-05-14 13:07:32"
+  },
+  {
+    "title": "Ask HN: Better Alternatives to Vapi (Voice Agents)?",
+    "url": "",
+    "points": 3,
+    "num_comments": 1,
+    "author": "Heidaradar",
+    "published_at": "2025-07-01 16:45:31"
+  },
+  {
+    "title": "Ask HN: What alternatives to the now-woefully out-of-date highscalability.com?",
+    "url": "",
+    "points": 3,
+    "num_comments": 0,
+    "author": "warrenm",
+    "published_at": "2025-08-04 15:36:32"
+  },
+  {
+    "title": "Ask HN: Alternatives to Deploys per Million Metric?",
+    "url": "",
+    "points": 3,
+    "num_comments": 0,
+    "author": "giantg2",
+    "published_at": "2025-04-30 13:53:41"
+  },
+  {
+    "title": "Ask HN: Have You Automated Cooking?",
+    "url": "",
+    "points": 3,
+    "num_comments": 6,
+    "author": "yesitcan",
+    "published_at": "2025-12-02 14:56:33"
+  },
+  {
+    "title": "Tired of checking AWS costs daily. Is this SaaS idea valid?",
+    "url": "https://www.billping.com/",
+    "points": 3,
+    "num_comments": 5,
+    "author": "bval",
+    "published_at": "2025-11-24 03:57:05"
+  },
+  {
+    "title": "Ask HN: How to start doing LinkedIn outreach to validate SaaS ideas?",
+    "url": "",
+    "points": 3,
+    "num_comments": 1,
+    "author": "yoouareperfect",
+    "published_at": "2025-11-22 16:47:08"
+  },
+  {
+    "title": "I made a database of micro SaaS ideas from billion dollar companies",
+    "url": "https://www.provenideas.net/",
+    "points": 3,
+    "num_comments": 0,
+    "author": "mattmerrick",
+    "published_at": "2025-11-27 23:38:04"
+  }
+]
