@@ -2,14 +2,14 @@
   "modules": {
     "reddit_scraper": true,
     "keyword_research": true,
-    "trend_checker": true,
+    "trend_checker": false,
     "hn_scraper": true,
-    "idea_scorer": true,
-    "convergence_scorer": true,
+    "idea_scorer": false,
+    "convergence_scorer": false,
     "email_finder": false,
     "email_sender": false,
     "social_poster": false,
-    "landing_page_builder": true
+    "landing_page_builder": false
   },
   "reddit": {
     "subreddits": [

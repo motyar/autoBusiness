@@ -54,9 +54,19 @@ async function run() {
     VALUES (?, ?, ?, ?, ?, date('now'), ?)
   `);
 
-  const seeds = [...cfg.seeds];
-  if (nicheCfg.target) {
-    seeds.push(...cfg.seeds.map(s => `${s} ${nicheCfg.target}`));
+  // Allow env var overrides for niche and seeds (used by the research workflow dispatch)
+  const envNiche = (process.env.RESEARCH_NICHE || '').trim();
+  const envSeeds = (process.env.RESEARCH_SEEDS || '')
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  const nicheTarget = envNiche || nicheCfg.target || '';
+  const baseSeeds = envSeeds.length > 0 ? envSeeds : [...cfg.seeds];
+
+  const seeds = [...baseSeeds];
+  if (nicheTarget) {
+    seeds.push(...baseSeeds.map(s => `${s} ${nicheTarget}`));
   }
 
   let totalInserted = 0;
@@ -92,7 +102,7 @@ async function run() {
 
       if (score < (cfg.opportunity_score_threshold || 1)) continue;
 
-      const niche = nicheCfg.target || extractNiche(kw);
+      const niche = nicheTarget || extractNiche(kw);
       const result = insertKeyword.run(kw, volumeRange, competitionLevel, 'autocomplete', score, niche);
       if (result.changes > 0) count++;
     }
