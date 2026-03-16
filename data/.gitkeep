@@ -1,0 +1,6 @@
+This directory stores runtime data files including:
+- `database.db` — SQLite database (gitignored, created on first run)
+- `shortlist.json` — Top validated ideas (gitignored, generated each run)
+- `summary.md` — Latest run digest (gitignored, generated each run)
+
+The `.gitkeep` file ensures this directory exists in the repository.

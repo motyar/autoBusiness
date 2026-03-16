@@ -1,0 +1,30 @@
+{
+  "name": "auto-business",
+  "version": "1.0.0",
+  "description": "Automated market research, idea validation, landing page generation, and email outreach system",
+  "main": "scripts/orchestrator.js",
+  "scripts": {
+    "start": "node scripts/orchestrator.js",
+    "scrape": "node scripts/reddit-scraper.js",
+    "keywords": "node scripts/keyword-research.js",
+    "trends": "node scripts/trend-checker.js",
+    "hn": "node scripts/hn-scraper.js",
+    "score": "node scripts/idea-scorer.js",
+    "converge": "node scripts/convergence-scorer.js",
+    "find-emails": "node scripts/email-finder.js",
+    "send-emails": "node scripts/emailer.js",
+    "social": "node scripts/social-poster.js",
+    "landing-page": "node scripts/landing-page.js",
+    "summary": "node scripts/summary.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "better-sqlite3": "^12.8.0",
+    "node-fetch": "^3.3.2",
+    "resend": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "MIT"
+}

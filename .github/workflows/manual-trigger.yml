@@ -1,0 +1,98 @@
+name: Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      module:
+        description: 'Module to run'
+        required: true
+        type: choice
+        options:
+          - reddit-scraper
+          - hn-scraper
+          - keyword-research
+          - trend-checker
+          - idea-scorer
+          - convergence-scorer
+          - email-finder
+          - emailer
+          - social-poster
+          - landing-page
+          - summary
+          - orchestrator-daily
+          - orchestrator-weekly
+          - orchestrator-email
+      niche:
+        description: 'Target niche (optional, for landing-page module)'
+        required: false
+        type: string
+
+jobs:
+  run-module:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore database cache
+        uses: actions/cache@v4
+        with:
+          path: data/database.db
+          key: database-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            database-${{ github.ref_name }}-
+
+      - name: Run selected module
+        run: |
+          MODULE="${{ github.event.inputs.module }}"
+          case "$MODULE" in
+            orchestrator-daily)
+              ORCHESTRATOR_MODE=daily node scripts/orchestrator.js
+              ;;
+            orchestrator-weekly)
+              ORCHESTRATOR_MODE=weekly node scripts/orchestrator.js
+              ;;
+            orchestrator-email)
+              ORCHESTRATOR_MODE=email node scripts/orchestrator.js
+              ;;
+            landing-page)
+              LANDING_PAGE_NICHE="${{ github.event.inputs.niche }}" node scripts/landing-page.js
+              ;;
+            *)
+              node "scripts/${MODULE}.js"
+              ;;
+          esac
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          HUNTER_API_KEY: ${{ secrets.HUNTER_API_KEY }}
+          APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          LINKEDIN_CLIENT_ID: ${{ secrets.LINKEDIN_CLIENT_ID }}
+          LINKEDIN_CLIENT_SECRET: ${{ secrets.LINKEDIN_CLIENT_SECRET }}
+          LANDING_PAGE_URL: ${{ vars.LANDING_PAGE_URL }}
+          FORMSPREE_FORM_ID: ${{ secrets.FORMSPREE_FORM_ID }}
+        continue-on-error: true
+
+      - name: Commit any generated files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/ landing-pages/ || true
+          git diff --staged --quiet || git commit -m "chore: manual run - ${{ github.event.inputs.module }} [skip ci]"
+          git push || true
