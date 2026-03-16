@@ -1,0 +1,15 @@
+This directory stores generated landing pages.
+Each subdirectory is a separate landing page, named after the niche slug.
+
+Example structure:
+```
+landing-pages/
+├── invoice-automation/
+│   ├── index.html
+│   └── style.css
+└── scheduling-tool/
+    ├── index.html
+    └── style.css
+```
+
+These files are committed to the repo and served via GitHub Pages.

@@ -1,0 +1,71 @@
+name: Daily Scrape & Score
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  scrape-and-score:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore database cache
+        uses: actions/cache@v4
+        with:
+          path: data/database.db
+          key: database-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            database-${{ github.ref_name }}-
+
+      - name: Run Reddit scraper
+        if: ${{ vars.REDDIT_SCRAPER_ENABLED != 'false' }}
+        run: node scripts/reddit-scraper.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        continue-on-error: true
+
+      - name: Run HackerNews scraper
+        if: ${{ vars.HN_SCRAPER_ENABLED != 'false' }}
+        run: node scripts/hn-scraper.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        continue-on-error: true
+
+      - name: Run Idea Scorer
+        if: ${{ vars.IDEA_SCORER_ENABLED != 'false' }}
+        run: node scripts/idea-scorer.js
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        continue-on-error: true
+
+      - name: Run Convergence Scorer
+        if: ${{ vars.CONVERGENCE_SCORER_ENABLED != 'false' }}
+        run: node scripts/convergence-scorer.js
+        continue-on-error: true
+
+      - name: Generate Summary
+        run: node scripts/summary.js
+        continue-on-error: true
+
+      - name: Commit summary
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/summary.md data/shortlist.json || true
+          git diff --staged --quiet || git commit -m "chore: update daily summary [skip ci]"
+          git push || true

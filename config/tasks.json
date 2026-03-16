@@ -1,0 +1,17 @@
+{
+  "queue": [],
+  "last_run": null,
+  "schedule": {
+    "reddit_scraper": "daily",
+    "keyword_research": "weekly",
+    "trend_checker": "weekly",
+    "hn_scraper": "daily",
+    "idea_scorer": "after_scrape",
+    "convergence_scorer": "after_scrape",
+    "email_finder": "weekly",
+    "email_sender": "tue_wed_thu",
+    "social_poster": "daily",
+    "landing_page_builder": "manual",
+    "summary": "daily"
+  }
+}

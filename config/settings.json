@@ -1,0 +1,121 @@
+{
+  "modules": {
+    "reddit_scraper": true,
+    "keyword_research": true,
+    "trend_checker": true,
+    "hn_scraper": true,
+    "idea_scorer": true,
+    "convergence_scorer": true,
+    "email_finder": false,
+    "email_sender": false,
+    "social_poster": false,
+    "landing_page_builder": true
+  },
+  "reddit": {
+    "subreddits": [
+      "entrepreneur",
+      "SaaS",
+      "startups",
+      "indiehackers",
+      "smallbusiness",
+      "webdev",
+      "digitalnomad",
+      "freelance"
+    ],
+    "queries": [
+      "wish there was",
+      "alternative to",
+      "paying for",
+      "anyone know a tool",
+      "is there a way to",
+      "why is there no",
+      "I hate that",
+      "frustrated with"
+    ],
+    "min_score": 5,
+    "max_age_days": 180,
+    "posts_per_query": 25,
+    "delay_between_requests_ms": 1500
+  },
+  "keywords": {
+    "seeds": [
+      "best tool for",
+      "alternative to",
+      "free app for",
+      "how to automate",
+      "cheapest way to",
+      "software for",
+      "app for small business"
+    ],
+    "min_volume": 100,
+    "max_volume": 10000,
+    "target_volume_min": 200,
+    "target_volume_max": 2000,
+    "alphabet_soup": true,
+    "opportunity_score_threshold": 3
+  },
+  "trends": {
+    "timeframe": "today 12-m",
+    "direction_filter": ["rising"],
+    "geo": ""
+  },
+  "hn": {
+    "queries": [
+      "Show HN",
+      "Ask HN tool",
+      "Ask HN alternative",
+      "Ask HN automate",
+      "SaaS idea"
+    ],
+    "min_points": 3,
+    "max_age_days": 365,
+    "results_per_query": 20
+  },
+  "ai": {
+    "default_model": "gemini-1.5-flash",
+    "complex_model": "gemini-1.5-pro",
+    "batch_size": 20,
+    "max_daily_cost_usd": 5,
+    "confidence_threshold": 60
+  },
+  "email_finder": {
+    "providers": ["hunter", "apollo"],
+    "verify_before_send": true,
+    "max_leads_per_run": 10
+  },
+  "email": {
+    "from_name": "Your Name",
+    "from_address": "you@yourdomain.com",
+    "reply_to": "you@yourdomain.com",
+    "daily_limit": 30,
+    "send_days": ["tuesday", "wednesday", "thursday"],
+    "send_hour_utc": 14,
+    "subject_max_words": 5,
+    "min_domain_age_days": 14
+  },
+  "social": {
+    "twitter": {
+      "enabled": false,
+      "posts_per_day": 3,
+      "engage_threads": 5
+    },
+    "reddit": {
+      "enabled": false,
+      "comments_per_day": 5,
+      "subreddits": ["entrepreneur", "startups"]
+    },
+    "linkedin": {
+      "enabled": false,
+      "posts_per_day": 1
+    }
+  },
+  "landing_page": {
+    "host": "github-pages",
+    "price_competitor_ratio": 0.5,
+    "trial_days": 7
+  },
+  "niche": {
+    "target": "",
+    "keywords": []
+  }
+}

@@ -1,0 +1,44 @@
+name: Daily Summary
+
+on:
+  schedule:
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  generate-summary:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Restore database cache
+        uses: actions/cache@v4
+        with:
+          path: data/database.db
+          key: database-${{ github.ref_name }}-${{ github.run_id }}
+          restore-keys: |
+            database-${{ github.ref_name }}-
+
+      - name: Generate Summary
+        run: node scripts/summary.js
+
+      - name: Commit summary
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions"
+          git add data/summary.md || true
+          git diff --staged --quiet || git commit -m "chore: daily summary [skip ci]"
+          git push || true
