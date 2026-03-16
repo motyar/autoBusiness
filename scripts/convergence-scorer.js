@@ -19,18 +19,25 @@ function run() {
   const runId = startRun('convergence-scorer');
   const db = getDb();
 
+  // Default confidence for niche-tagged posts that have not yet been scored by the AI (idea-scorer)
+  const DEFAULT_UNSCORED_CONFIDENCE = 0.5;
+
   const redditSignals = db.prepare(`
-    SELECT niche, 'reddit' as source, AVG(confidence) as avg_confidence
+    SELECT niche, 'reddit' as source,
+           COALESCE(AVG(CASE WHEN confidence >= 0.6 THEN confidence END), ${DEFAULT_UNSCORED_CONFIDENCE}) as avg_confidence
     FROM reddit_posts
-    WHERE niche IS NOT NULL AND confidence >= 0.6
+    WHERE niche IS NOT NULL AND niche != ''
     GROUP BY niche
+    HAVING COUNT(*) >= 1
   `).all();
 
   const hnSignals = db.prepare(`
-    SELECT niche, 'hn' as source, AVG(confidence) as avg_confidence
+    SELECT niche, 'hn' as source,
+           COALESCE(AVG(CASE WHEN confidence >= 0.6 THEN confidence END), ${DEFAULT_UNSCORED_CONFIDENCE}) as avg_confidence
     FROM hn_posts
-    WHERE niche IS NOT NULL AND confidence >= 0.6
+    WHERE niche IS NOT NULL AND niche != ''
     GROUP BY niche
+    HAVING COUNT(*) >= 1
   `).all();
 
   const keywordSignals = db.prepare(`
@@ -63,7 +70,7 @@ function run() {
   }
 
   const shortlist = [];
-  const minSources = 3;
+  const minSources = 2;
 
   for (const [niche, data] of nicheMap.entries()) {
     if (data.sources.length < minSources) continue;
@@ -81,7 +88,7 @@ function run() {
       source_count: sourceCount,
       sources: data.sources,
       confidence: Math.round(finalScore),
-      status: finalScore >= 60 && sourceCount >= 3 ? 'validated' : 'new',
+      status: finalScore >= 60 && sourceCount >= 2 ? 'validated' : 'new',
       updated_at: new Date().toISOString(),
     });
   }
@@ -128,7 +135,7 @@ function run() {
   );
 
   const validated = shortlist.filter(i => i.status === 'validated');
-  const summary = `${shortlist.length} niches scored. ${validated.length} validated (3+ sources, score ≥ 60). Top: ${shortlist[0]?.niche || 'none'}`;
+  const summary = `${shortlist.length} niches scored. ${validated.length} validated (2+ sources, score ≥ 60). Top: ${shortlist[0]?.niche || 'none'}`;
   console.log(`[convergence-scorer] Done. ${summary}`);
   endRun(runId, 'success', shortlist.length, summary, null);
 }

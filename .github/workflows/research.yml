@@ -56,11 +56,17 @@ jobs:
       - name: Run HackerNews scraper
         if: ${{ github.event.inputs.run_hn != 'false' }}
         run: node scripts/hn-scraper.js
+        env:
+          RESEARCH_NICHE: ${{ github.event.inputs.niche }}
+          RESEARCH_SEEDS: ${{ github.event.inputs.seeds }}
         continue-on-error: true
 
       - name: Run Reddit scraper
         if: ${{ github.event.inputs.run_reddit != 'false' }}
         run: node scripts/reddit-scraper.js
+        env:
+          RESEARCH_NICHE: ${{ github.event.inputs.niche }}
+          RESEARCH_SEEDS: ${{ github.event.inputs.seeds }}
         continue-on-error: true
 
       - name: Run keyword research
@@ -69,6 +75,14 @@ jobs:
         env:
           RESEARCH_NICHE: ${{ github.event.inputs.niche }}
           RESEARCH_SEEDS: ${{ github.event.inputs.seeds }}
+        continue-on-error: true
+
+      - name: Run convergence scorer
+        run: node scripts/convergence-scorer.js
+        continue-on-error: true
+
+      - name: Generate summary
+        run: node scripts/summary.js
         continue-on-error: true
 
       - name: Export research results

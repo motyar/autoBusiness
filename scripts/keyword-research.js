@@ -64,10 +64,23 @@ async function run() {
   const nicheTarget = envNiche || nicheCfg.target || '';
   const baseSeeds = envSeeds.length > 0 ? envSeeds : [...cfg.seeds];
 
+  // Also include niche-specific keywords from settings.niche.keywords as extra seeds
+  const nicheKeywords = (nicheCfg.keywords || []).filter(Boolean);
+
   const seeds = [...baseSeeds];
+  if (nicheKeywords.length > 0) {
+    seeds.push(...nicheKeywords);
+  }
   if (nicheTarget) {
     seeds.push(...baseSeeds.map(s => `${s} ${nicheTarget}`));
   }
+
+  console.log(`[keyword-research] Niche target: "${nicheTarget || '(none)'}"`);
+  console.log(`[keyword-research] Base seeds (${baseSeeds.length}): ${baseSeeds.join(', ')}`);
+  if (nicheKeywords.length > 0) {
+    console.log(`[keyword-research] Niche keywords from settings (${nicheKeywords.length}): ${nicheKeywords.join(', ')}`);
+  }
+  console.log(`[keyword-research] Total seeds to expand (${seeds.length}): ${seeds.join(' | ')}`);
 
   let totalInserted = 0;
   const errors = [];
