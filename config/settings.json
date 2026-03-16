@@ -5,7 +5,7 @@
     "trend_checker": false,
     "hn_scraper": true,
     "idea_scorer": false,
-    "convergence_scorer": false,
+    "convergence_scorer": true,
     "email_finder": false,
     "email_sender": false,
     "social_poster": false,
