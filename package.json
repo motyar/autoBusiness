@@ -5,10 +5,12 @@
   "main": "scripts/orchestrator.js",
   "scripts": {
     "start": "node scripts/orchestrator.js",
+    "research": "node scripts/hn-scraper.js && node scripts/reddit-scraper.js && node scripts/keyword-research.js && node scripts/export-research.js",
     "scrape": "node scripts/reddit-scraper.js",
     "keywords": "node scripts/keyword-research.js",
-    "trends": "node scripts/trend-checker.js",
     "hn": "node scripts/hn-scraper.js",
+    "export": "node scripts/export-research.js",
+    "trends": "node scripts/trend-checker.js",
     "score": "node scripts/idea-scorer.js",
     "converge": "node scripts/convergence-scorer.js",
     "find-emails": "node scripts/email-finder.js",

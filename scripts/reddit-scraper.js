@@ -23,8 +23,14 @@ async function fetchJson(url) {
     console.warn('[reddit-scraper] Rate limited. Waiting 30s...');
     await new Promise(r => setTimeout(r, 30000));
     const retry = await fetch(url, { headers: { 'User-Agent': USER_AGENT } });
+    if (retry.status === 403) {
+      throw new Error(`HTTP 403 Forbidden — Reddit may be blocking automated requests for this endpoint`);
+    }
     if (!retry.ok) throw new Error(`HTTP ${retry.status} after retry`);
     return retry.json();
+  }
+  if (res.status === 403) {
+    throw new Error(`HTTP 403 Forbidden — Reddit may be blocking automated requests for this endpoint`);
   }
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   return res.json();
